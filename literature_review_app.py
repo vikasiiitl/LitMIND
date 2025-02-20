@@ -19,6 +19,8 @@ from gensim.models import KeyedVectors
 from scipy.linalg import triu
 from dotenv import load_dotenv
 
+
+
 load_dotenv()
 # Initialize session state
 if 'processed' not in st.session_state:
@@ -32,9 +34,8 @@ if 'abstract' not in st.session_state:
 if 'keywords' not in st.session_state:
     st.session_state.keywords = ""
 
-# Download NLTK resources
-nltk.download('punkt')
-nltk.download('stopwords')
+custom_nltk_path = os.path.join(os.getcwd(), "nltk_data")
+nltk.data.path.append(custom_nltk_path)
 
 # Set page config
 st.set_page_config(page_title="Research Literature Assistant", layout="wide")
@@ -72,7 +73,7 @@ def extractAbstract(text):
 
 def extractKeyword(text):
     chat_messages = [
-        SystemMessage(content='You are an expert assistant with expertise in extracting keywords from academic papers'),
+        SystemMessage(content='You are an expert assistant with expertise in extracting 5 most important keywords from academic papers'),
         HumanMessage(content=f'Extract keywords from this text. Return as comma-separated values or "no" if none found:\n\n{text}')
     ]
     llm = ChatOpenAI(model_name='gpt-4')

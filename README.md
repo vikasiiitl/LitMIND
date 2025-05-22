@@ -1,2 +1,2 @@
-# ELitSumm
+# LiTLLM+
 Leveraging Ensemble of LLMs for Automatic Literature Work Generation

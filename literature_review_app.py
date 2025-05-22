@@ -200,7 +200,7 @@ def summaryFilter(text):
 
 # --- UI Components ---
 def home_page():
-    st.header("📄 LiTLLM+: Harnessing Multi-LLM Coordination for End-to-End Literature Review Generation")
+    st.header("📄 LitMIND: Harnessing Multi-LLM Coordination for End-to-End Literature Review Generation")
     uploaded_file = st.file_uploader("Upload research paper (PDF)", type=["pdf"])
     
     if uploaded_file:

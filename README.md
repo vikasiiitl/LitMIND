@@ -1,2 +1,3 @@
 # LiTLLM+
-Leveraging Ensemble of LLMs for Automatic Literature Work Generation
+Harnessing Multi-LLM Coordination for
+End-to-End Literature Review Generation
